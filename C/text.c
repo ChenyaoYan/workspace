@@ -34,10 +34,24 @@ void text1()
 
     printf("a = %d, b= %d\n",a,b);
 }
+void fun(char s[], int num)
+{
+    char temp;
+    for (int i = 1; i < num-2; i++)
+        for(int j = num-2; j > i ;j--)
+        {
+            if (s[j] > s[j-1])
+            {
+                temp = s[j];
+                s[j] = s[j-1];
+                s[j-1] = temp;
+            }
+        }
+}
 
 void main()
 {
-    //printf("%d",text());
-    text1();
-    
+    char s[10] = "CEAedca";
+    fun(s, 7);
+    printf("%s", s);
 }
